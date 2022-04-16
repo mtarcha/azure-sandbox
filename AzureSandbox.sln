@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA13A291-9AFF-4D6E-AF15-607DE618DF96}"
 EndProject
@@ -10,9 +10,38 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSandboxClient", "src\AzureSandboxClient\AzureSandboxClient.csproj", "{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSandboxServer", "src\AzureSandboxServer\AzureSandboxServer.csproj", "{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSandbox.Shared", "src\AzureSandbox.Shared\AzureSandbox.Shared.csproj", "{B23A0EFF-A090-4AE3-8F18-E4304921D96B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BFFDF9CA-F9A8-49B4-BD26-7077253137CF} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
+		{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
+		{B23A0EFF-A090-4AE3-8F18-E4304921D96B} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4763495-630C-4928-ABB9-AE10E02A56A3}
