@@ -10,11 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSandboxClient", "src\AzureSandboxClient\AzureSandboxClient.csproj", "{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSandbox.Client", "src\AzureSandbox.Client\AzureSandbox.Client.csproj", "{BFFDF9CA-F9A8-49B4-BD26-7077253137CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSandboxServer", "src\AzureSandboxServer\AzureSandboxServer.csproj", "{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureSandbox.Api", "src\AzureSandbox.Api\AzureSandbox.Api.csproj", "{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSandbox.Shared", "src\AzureSandbox.Shared\AzureSandbox.Shared.csproj", "{B23A0EFF-A090-4AE3-8F18-E4304921D96B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSandbox.Core", "src\AzureSandbox.Core\AzureSandbox.Core.csproj", "{E6165682-E319-41EA-9E60-4FCB59343C7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23A0EFF-A090-4AE3-8F18-E4304921D96B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6165682-E319-41EA-9E60-4FCB59343C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6165682-E319-41EA-9E60-4FCB59343C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6165682-E319-41EA-9E60-4FCB59343C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6165682-E319-41EA-9E60-4FCB59343C7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +48,7 @@ Global
 		{BFFDF9CA-F9A8-49B4-BD26-7077253137CF} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
 		{B42E3E68-CDEC-46CE-986E-D50EF3DC4ACC} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
 		{B23A0EFF-A090-4AE3-8F18-E4304921D96B} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
+		{E6165682-E319-41EA-9E60-4FCB59343C7E} = {EA13A291-9AFF-4D6E-AF15-607DE618DF96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4763495-630C-4928-ABB9-AE10E02A56A3}

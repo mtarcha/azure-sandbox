@@ -1,5 +1,5 @@
-using AzureSandboxClient;
-using AzureSandboxClient.Services;
+using AzureSandbox.Client;
+using AzureSandbox.Client.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Refit;

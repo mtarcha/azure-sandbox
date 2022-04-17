@@ -1,11 +1,11 @@
 ﻿using AzureSandbox.Shared;
-using AzureSandboxClient.Services;
+using AzureSandbox.Client.Services;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 
-namespace AzureSandboxClient.Pages
+namespace AzureSandbox.Client.Pages
 {
-    public partial class SQLDatabase
+    public partial class SQLDatabase : ComponentBase
     {
         [Inject]
         private IWeatherForecastApi WeatherForecastApi { get; set; }

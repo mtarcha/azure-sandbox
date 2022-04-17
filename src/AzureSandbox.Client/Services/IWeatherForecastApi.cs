@@ -1,7 +1,7 @@
 ﻿using AzureSandbox.Shared;
 using Refit;
 
-namespace AzureSandboxClient.Services
+namespace AzureSandbox.Client.Services
 {
     public interface IWeatherForecastApi
     {
