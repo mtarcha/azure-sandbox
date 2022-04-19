@@ -8,7 +8,7 @@ namespace AzureSandbox.Core
 {
     public interface IWeatherForecastRepository
     {
-        Task<IEnumerable<IWeatherForecast>> GetNewestForecastAsync(uint skip, uint count, CancellationToken cancellationToken);
+        Task<IEnumerable<IWeatherForecast>> GetNewestForecastAsync(uint count, CancellationToken cancellationToken);
 
         Task CreateForecastAsync(IWeatherForecast weatherForecast, CancellationToken cancellationToken);
     }

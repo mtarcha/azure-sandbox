@@ -1,5 +1,10 @@
+using AzureSandbox.Core;
 using AzureSandbox.Shared;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AzureSandboxServer.Controllers
 {
@@ -7,27 +12,29 @@ namespace AzureSandboxServer.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        private readonly ISqlWeatherForecastRepository _sqlRepository;
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ISqlWeatherForecastRepository sqlRepository)
         {
-            _logger = logger;
+            _sqlRepository = sqlRepository;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<IEnumerable<WeatherForecast>> Get(CancellationToken token)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var result = await _sqlRepository.GetNewestForecastAsync(10, token);
+            return result.Select(Map);
+        }
+
+        private static WeatherForecast Map(IWeatherForecast weatherForecast)
+        {
+            return new WeatherForecast
             {
-                Location = "Houten",
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Location = weatherForecast.Location,
+                Date = weatherForecast.Date.Date,
+                Summary = weatherForecast.Summary,
+                TemperatureC = weatherForecast.TemperatureC
+            };
         }
     }
 }

@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <WarningsAsErrors>Nullable</WarningsAsErrors>
   </PropertyGroup>
 
@@ -12,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AzureSandbox.Core\AzureSandbox.Core.csproj" />
     <ProjectReference Include="..\AzureSandbox.Shared\AzureSandbox.Shared.csproj" />
+    <ProjectReference Include="..\AzureSandbox.Sql\AzureSandbox.Sql.csproj" />
   </ItemGroup>
 
 </Project>
