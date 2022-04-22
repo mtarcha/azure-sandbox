@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "sql_server": {
+      "defaultValue": "tarcha-sandbox-sql-server",
+      "type": "String"
+    },
+    "sql_database": {
+      "defaultValue": "weather",
+      "type": "String"
+    },
+    "sql_admin_password": {
+      "defaultValue": "123asdQ!",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Sql/servers",
+      "apiVersion": "2021-08-01-preview",
+      "name": "[parameters('sql_server')]",
+      "location": "germanywestcentral",
+      "kind": "v12.0",
+      "properties": {
+        "administratorLogin": "learning_user",
+        "administratorLoginPassword": "[parameters('sql_admin_password')]",
+        "version": "12.0",
+        "minimalTlsVersion": "1.2",
+        "publicNetworkAccess": "Enabled",
+        "restrictOutboundNetworkAccess": "Disabled"
+      }
+    },
+    {
+      "type": "Microsoft.Sql/servers/databases",
+      "apiVersion": "2021-08-01-preview",
+      "name": "[concat(parameters('sql_server'), '/', parameters('sql_database'))]",
+      "location": "germanywestcentral",
+      "dependsOn": [
+        "[resourceId('Microsoft.Sql/servers', parameters('sql_server'))]"
+      ],
+      "sku": {
+        "name": "Basic",
+        "tier": "Basic",
+        "capacity": 5
+      },
+      "kind": "v12.0,user",
+      "properties": {
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "maxSizeBytes": 2147483648,
+        "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+        "zoneRedundant": false,
+        "readScale": "Disabled",
+        "requestedBackupStorageRedundancy": "Local",
+        "maintenanceConfigurationId": "/subscriptions/d7b0f632-0ede-45e2-a176-df9ffaba2b3e/providers/Microsoft.Maintenance/publicMaintenanceConfigurations/SQL_Default",
+        "isLedgerOn": false
+      }
+    }
+  ]
+}
