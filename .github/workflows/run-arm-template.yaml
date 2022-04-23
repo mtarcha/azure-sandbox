@@ -24,4 +24,4 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: ../../infra/AzureSandbox.Infra/azuredeploy.json
+        template: ./infra/AzureSandbox.Infra/azuredeploy.json
